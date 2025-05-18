@@ -92,7 +92,7 @@ class Ui_MainWindow(object):
         self.two_week_overview.setTitle("")
         self.two_week_overview.setObjectName("two_week_overview")
         self.lineEdit = QtWidgets.QLineEdit(self.two_week_overview)
-        self.lineEdit.setGeometry(QtCore.QRect(2, 2, 341, 35))
+        self.lineEdit.setGeometry(QtCore.QRect(0, 0, 345, 35))
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
