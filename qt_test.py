@@ -25,27 +25,36 @@ class MyApp(QtWidgets.QMainWindow):
 
     def keyPressEvent(self, event):
         if event.key() == QtCore.Qt.Key_BracketLeft:
+            self.clock.start()
+
             if (not self.WKO_ACTIVE):
                 self.WKO_ACTIVE = True
                 self.START_TIME = time.time()
-                
-            
             else:
-                self.prev_recorded_times.append(round(time.time() - self.current_rest_start_time))
+                if ((not hasattr(self, 'END_TIME')) or (self.END_TIME < self.current_rest_start_time)): self.END_TIME = time.time()
+
+                self.prev_recorded_times.append(round(self.END_TIME - self.current_rest_start_time, 2))
                 self.UPDATE_avr_time()
 
             self.current_rest_start_time = time.time()
+        
+
+        if event.key() == QtCore.Qt.Key_BracketRight:
+            self.END_TIME = time.time()
+            self.clock.stop()
 
 
     def UPDATE(self):
         self.clock = QtCore.QTimer()
+        self.raw_clock = QtCore.QTimer()
 
+        self.raw_clock.timeout.connect(self.UPDATE_time)
         self.clock.timeout.connect(self.UPDATE_current_rest_time)
         self.clock.timeout.connect(self.UPDATE_deltatime)
-        self.clock.timeout.connect(self.UPDATE_time)
         self.clock.timeout.connect(self.UPDATE_wko_time) 
 
         self.clock.start(round(1000/self.TPS))
+        self.raw_clock.start(round(1000/self.TPS))
 
 
     def UPDATE_avr_time(self):

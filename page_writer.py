@@ -4,7 +4,7 @@ from openpyxl.utils import get_column_letter as gcl
 
 LOGS = True
 
-scrape_obj = sheet_parser.Scraper("test.xlsx", logs=LOGS)
+scrape_obj = sheet_parser.Scraper("input.xlsx", logs=LOGS)
 tools      = sheet_parser.ExcelTools()
 
 wko_data          = scrape_obj.wko_data

@@ -216,9 +216,9 @@
     <widget class="QLineEdit" name="lineEdit">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>172</x>
        <y>0</y>
-       <width>345</width>
+       <width>173</width>
        <height>35</height>
       </rect>
      </property>
@@ -233,7 +233,36 @@
       <string notr="true">color: #FFFFFF</string>
      </property>
      <property name="text">
-      <string>2 week overview</string>
+      <string>88%</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>173</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #FFFFFF</string>
+     </property>
+     <property name="text">
+      <string>Push</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>

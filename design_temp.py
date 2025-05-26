@@ -17,6 +17,7 @@ class Ui_MainWindow(object):
         MainWindow.resize(350, 528)
         MainWindow.setMinimumSize(QtCore.QSize(350, 528))
         MainWindow.setMaximumSize(QtCore.QSize(350, 528))
+        MainWindow.setWindowFlags(MainWindow.windowFlags() | QtCore.Qt.WindowStaysOnTopHint)
         MainWindow.setStyleSheet("background-color: #303030")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("")
